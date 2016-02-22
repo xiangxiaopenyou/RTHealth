@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Activity" representedClassName="Activity" syncable="YES">
+        <attribute name="activitybegintime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activitycontent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activitycreatedtime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activitydistance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activityendtime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activityid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activitylimitnumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activitylimittime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activitynumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activityownerid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activityownernickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activityplace" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activityposition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activitytelephone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activitytitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="positionlatitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="positionlongitude" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="detailofactivity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="activitydetail" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="finishedfriend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="friendfinishedactivity" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="finisheduser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="finishedactivity" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="underwayfriend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="friendunderwayactivity" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="underwayuser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="underwayactivity" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="useractivity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="activity" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="useroftopic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="usertopic" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="userrecommend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="activityrecommend" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="usertakein" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FriendsInfo" syncable="YES"/>
+        <relationship name="usertoaddactivitydistance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="addactivitydistance" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="usertoaddactivitytime" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="addactivitytime" inverseEntity="UserInfo" syncable="YES"/>
+    </entity>
+    <entity name="Chat" representedClassName="Chat" syncable="YES">
+        <attribute name="chatlastcontent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chatlasttime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chatuserid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chatusernickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chatuserphoto" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="chatlist" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChatList" inverseName="chat" inverseEntity="ChatList" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="chat" inverseEntity="UserInfo" syncable="YES"/>
+    </entity>
+    <entity name="ChatList" representedClassName="ChatList" syncable="YES">
+        <attribute name="chatcontent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chatid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chatisread" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chattime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chattype" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="chat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Chat" inverseName="chatlist" inverseEntity="Chat" syncable="YES"/>
+    </entity>
+    <entity name="Comment" representedClassName="Comment" syncable="YES">
+        <attribute name="commentcontent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commentid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commenttime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commenttouserid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commenttousername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commentuserid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commentusername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commentuserphoto" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="trend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trends" inverseName="comments" inverseEntity="Trends" syncable="YES"/>
+    </entity>
+    <entity name="Entity" representedClassName="Entity" syncable="YES">
+        <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Entity1" inverseName="relationship" inverseEntity="Entity1" syncable="YES"/>
+    </entity>
+    <entity name="Entity1" representedClassName="Entity1" syncable="YES">
+        <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entity" inverseName="relationship" inverseEntity="Entity" syncable="YES"/>
+    </entity>
+    <entity name="FriendsInfo" representedClassName="FriendsInfo" syncable="YES">
+        <attribute name="firendage" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="friendactivitynumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendattentionnumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendbirthday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendcreatetime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="frienddistance" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="friendfansnumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="friendfavoritesports" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendflag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendheight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendintroduce" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendisattention" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendnickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendphoto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendpoint" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendpopularity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendsex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendstate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendtype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendweight" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="activitytakein" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" syncable="YES"/>
+        <relationship name="canstartplan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HealthPlan" inverseName="friendstartplan" inverseEntity="HealthPlan" syncable="YES"/>
+        <relationship name="finishplan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HealthPlan" inverseName="friendfinishplan" inverseEntity="HealthPlan" syncable="YES"/>
+        <relationship name="friendattention" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FriendsInfo" inverseName="friendattention" inverseEntity="FriendsInfo" syncable="YES"/>
+        <relationship name="friendfans" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FriendsInfo" inverseName="friendfans" inverseEntity="FriendsInfo" syncable="YES"/>
+        <relationship name="healthplan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HealthPlan" inverseName="friend" inverseEntity="HealthPlan" syncable="YES"/>
+        <relationship name="popularityofuser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="popularityuser" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="teachofuser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="teacheruser" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="trendfavorite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trends" inverseName="favorite" inverseEntity="Trends" syncable="YES"/>
+        <relationship name="trendshared" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trends" inverseName="shared" inverseEntity="Trends" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="attentionuser" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="useroffans" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="fansofmy" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="userofnear" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="nearbyuser" inverseEntity="UserInfo" syncable="YES"/>
+    </entity>
+    <entity name="HealthPlan" representedClassName="HealthPlan" syncable="YES">
+        <attribute name="planbegindate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="plancontent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plancreatetime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plancreateuserid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plancycleday" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="plancyclenumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="planflag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="planid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="planimported" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="planlevel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plannumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="planpublic" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="planstate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plantitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plantype" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="finishedplanuser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="finishedplan" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="friend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FriendsInfo" inverseName="healthplan" inverseEntity="FriendsInfo" syncable="YES"/>
+        <relationship name="friendfinishplan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FriendsInfo" inverseName="finishplan" inverseEntity="FriendsInfo" syncable="YES"/>
+        <relationship name="friendstartplan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FriendsInfo" inverseName="canstartplan" inverseEntity="FriendsInfo" syncable="YES"/>
+        <relationship name="smallhealthplan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SmallHealthPlan" inverseName="healthplan" inverseEntity="SmallHealthPlan" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="healthplan" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="usertoimportplanrenqi" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="importplanrenqi" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="usertoimportplantime" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="importplantime" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="usertootherplan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="canstartplan" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="usertosystemplan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="systemplan" inverseEntity="UserInfo" syncable="YES"/>
+    </entity>
+    <entity name="Praise" representedClassName="Praise" syncable="YES">
+        <attribute name="praiseisread" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="praisetime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="praiseuserid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="praiseusernickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="praiseuserphoto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendaddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendcommentnumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendcontent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendcreatetime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendlabel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendlike" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendlocat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendphoto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendsex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendtitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trenduserhead" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trenduserid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendusertype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userphoto" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="praise" inverseEntity="UserInfo" syncable="YES"/>
+    </entity>
+    <entity name="Remind" representedClassName="Remind" syncable="YES">
+        <attribute name="remindcontent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remindid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remindisread" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remindsomeid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remindsometitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remindtime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remindtype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reminduserid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remindusernickname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="remind" inverseEntity="UserInfo" syncable="YES"/>
+    </entity>
+    <entity name="Reply" representedClassName="Reply" syncable="YES">
+        <attribute name="replycontent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="replyforusercontent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="replyforuserid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="replyforusernickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="replyfriendid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="replyfriendnickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="replyfriendtpye" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="replyid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="replyisread" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="replytime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="replytype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="replyuserid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="replyusernickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="replyuserphoto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendaddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendcommentnumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendcontent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendcreatetime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendlabel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendlike" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendlocat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendphoto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendsex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendtitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trenduserhead" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trenduserid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendusertype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="reply" inverseEntity="UserInfo" syncable="YES"/>
+    </entity>
+    <entity name="SmallHealthPlan" representedClassName="SmallHealthPlan" syncable="YES">
+        <attribute name="smallplanbegintime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smallplancontent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smallplancost" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smallplancycle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smallplanendtime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smallplanid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smallplanmark" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smallplansequence" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smallplanstateflag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="smallplantype" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="healthplan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HealthPlan" inverseName="smallhealthplan" inverseEntity="HealthPlan" syncable="YES"/>
+    </entity>
+    <entity name="SystemMessage" representedClassName="SystemMessage" syncable="YES">
+        <attribute name="systemmessagecontent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="systemmessageid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="systemmessageisread" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="systemmessagelink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="systemmessagephoto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="systemmessagetime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="systemmessagetopic" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="systemmessagetype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="systemphoto" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="systemmessage" inverseEntity="UserInfo" syncable="YES"/>
+    </entity>
+    <entity name="Trends" representedClassName="Trends" syncable="YES">
+        <attribute name="isfavorite" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ispublic" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendclassify" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendcommentnumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendcontent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendfavoritenumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendphoto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendsharednumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendtime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trendtype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="useraddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="usernickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userphoto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="usersex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="usertype" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="trend" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="favorite" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FriendsInfo" inverseName="trendfavorite" inverseEntity="FriendsInfo" syncable="YES"/>
+        <relationship name="shared" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FriendsInfo" inverseName="trendshared" inverseEntity="FriendsInfo" syncable="YES"/>
+        <relationship name="trendsofall" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="alltrends" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="trendsoffriend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="friendtrends" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="trendsoflike" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="liketrends" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="trendsofsports" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="sportstrends" inverseEntity="UserInfo" syncable="YES"/>
+        <relationship name="trendsofuser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="usertrends" inverseEntity="UserInfo" syncable="YES"/>
+    </entity>
+    <entity name="UserInfo" representedClassName="UserInfo" syncable="YES">
+        <attribute name="isnewuser" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="useractivitynumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userattentionnumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userbirthday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userfansnumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userfavoritesports" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="usergeopoint" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userheight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userheightpublic" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userintroduce" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="usernickname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userphoto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userpoint" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="usersex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="usertoken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userweight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userweightpublic" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="activity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="useractivity" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="activitydetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="detailofactivity" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="activityrecommend" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="userrecommend" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="addactivitydistance" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="usertoaddactivitydistance" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="addactivitytime" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="usertoaddactivitytime" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="alltrends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trends" inverseName="trendsofall" inverseEntity="Trends" syncable="YES"/>
+        <relationship name="attentionuser" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FriendsInfo" inverseName="user" inverseEntity="FriendsInfo" syncable="YES"/>
+        <relationship name="canstartplan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HealthPlan" inverseName="usertootherplan" inverseEntity="HealthPlan" syncable="YES"/>
+        <relationship name="chat" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chat" inverseName="user" inverseEntity="Chat" syncable="YES"/>
+        <relationship name="fansofmy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FriendsInfo" inverseName="useroffans" inverseEntity="FriendsInfo" syncable="YES"/>
+        <relationship name="finishedactivity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="finisheduser" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="finishedplan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HealthPlan" inverseName="finishedplanuser" inverseEntity="HealthPlan" syncable="YES"/>
+        <relationship name="friendfinishedactivity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="finishedfriend" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="friendtrends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trends" inverseName="trendsoffriend" inverseEntity="Trends" syncable="YES"/>
+        <relationship name="friendunderwayactivity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="underwayfriend" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="healthplan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HealthPlan" inverseName="user" inverseEntity="HealthPlan" syncable="YES"/>
+        <relationship name="importplanrenqi" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HealthPlan" inverseName="usertoimportplanrenqi" inverseEntity="HealthPlan" syncable="YES"/>
+        <relationship name="importplantime" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HealthPlan" inverseName="usertoimportplantime" inverseEntity="HealthPlan" syncable="YES"/>
+        <relationship name="liketrends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trends" inverseName="trendsoflike" inverseEntity="Trends" syncable="YES"/>
+        <relationship name="nearbyuser" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FriendsInfo" inverseName="userofnear" inverseEntity="FriendsInfo" syncable="YES"/>
+        <relationship name="popularityuser" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FriendsInfo" inverseName="popularityofuser" inverseEntity="FriendsInfo" syncable="YES"/>
+        <relationship name="praise" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Praise" inverseName="user" inverseEntity="Praise" syncable="YES"/>
+        <relationship name="remind" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Remind" inverseName="user" inverseEntity="Remind" syncable="YES"/>
+        <relationship name="reply" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reply" inverseName="user" inverseEntity="Reply" syncable="YES"/>
+        <relationship name="sportstrends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trends" inverseName="trendsofsports" inverseEntity="Trends" syncable="YES"/>
+        <relationship name="systemmessage" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SystemMessage" inverseName="user" inverseEntity="SystemMessage" syncable="YES"/>
+        <relationship name="systemplan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HealthPlan" inverseName="usertosystemplan" inverseEntity="HealthPlan" syncable="YES"/>
+        <relationship name="teacheruser" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FriendsInfo" inverseName="teachofuser" inverseEntity="FriendsInfo" syncable="YES"/>
+        <relationship name="underwayactivity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="underwayuser" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="usertopic" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="useroftopic" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="usertrends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trends" inverseName="trendsofuser" inverseEntity="Trends" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Activity" positionX="225" positionY="774" width="128" height="463"/>
+        <element name="Chat" positionX="421" positionY="1449" width="128" height="148"/>
+        <element name="ChatList" positionX="601" positionY="1386" width="128" height="133"/>
+        <element name="Comment" positionX="927" positionY="783" width="128" height="178"/>
+        <element name="Entity" positionX="664" positionY="54" width="128" height="75"/>
+        <element name="Entity1" positionX="459" positionY="87" width="128" height="75"/>
+        <element name="FriendsInfo" positionX="754" positionY="782" width="128" height="568"/>
+        <element name="HealthPlan" positionX="718" positionY="423" width="128" height="420"/>
+        <element name="Praise" positionX="421" positionY="1161" width="128" height="373"/>
+        <element name="Remind" positionX="234" positionY="1449" width="128" height="195"/>
+        <element name="Reply" positionX="234" positionY="1163" width="128" height="495"/>
+        <element name="SmallHealthPlan" positionX="711" positionY="207" width="128" height="210"/>
+        <element name="SystemMessage" positionX="592" positionY="1170" width="128" height="193"/>
+        <element name="Trends" positionX="934" positionY="450" width="128" height="420"/>
+        <element name="UserInfo" positionX="432" positionY="396" width="128" height="795"/>
+    </elements>
+</model>

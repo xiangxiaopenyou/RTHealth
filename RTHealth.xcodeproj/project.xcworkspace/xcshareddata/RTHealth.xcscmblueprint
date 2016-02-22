@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "afb799df-8495-47ce-acdd-34871857e355",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "afb799df-8495-47ce-acdd-34871857e355" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "afb799df-8495-47ce-acdd-34871857e355" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "31FD4AE3-F7AB-4024-AB67-B706D044CC3B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "afb799df-8495-47ce-acdd-34871857e355" : "RTHealth\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RTHealth",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "IOS\/RTHealth\/RTHealth.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/test.jianshen.so\/project",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "afb799df-8495-47ce-acdd-34871857e355"
+    }
+  ]
+}

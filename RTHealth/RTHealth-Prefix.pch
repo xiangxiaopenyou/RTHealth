@@ -1,0 +1,74 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+#import "CoreData+MagicalRecord.h"
+#import "UIImageView+OnlineImage.h"
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+#import "URLConstant.h"
+#import "RTConstant.h"
+
+#import "LayoutDefine.h"
+#import "RTUtil.h"
+#import "AFNetworking.h"
+#import "LXActivity.h"
+
+
+#import "WXApi.h"
+#import "WXApiObject.h"
+
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/QQApi.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/QQApiInterfaceObject.h>
+
+#import "WeiboSDK.h"
+
+#import "EGORefreshTableHeaderView.h"
+#import "JDStatusBarNotification.h"
+#import "MMLocationManager.h"
+
+#import "RTNetWork.h"
+#import "RTnetWorkConstant.h"
+#import "RTUploadImageNetWork.h"
+
+
+#import "RTAppDelegate.h"
+#import "RTViewController.h"
+#import "RTUserInfo.h"
+#import "CustomDate.h"
+
+
+#import "UserInfo.h"
+#import "HealthPlan.h"
+#import "Activity.h"
+#import "SmallHealthPlan.h"
+#import "Sports.h"
+#import "FriendsInfo.h"
+#import "Chat.h"
+#import "ChatList.h"
+#import "Comment.h"
+#import "Remind.h"
+#import "SystemMessage.h"
+#import "Praise.h"
+#import "Reply.h"
+#import "Trends.h"
+
+#import "PopoverView.h"
+
+#import "RTFriendInfoTableViewController.h"
+#import "RTLastTableViewCell.h"
+#import "RTFriendModelViewController.h"
+#import "RTLoadingViewController.h"
+#endif
